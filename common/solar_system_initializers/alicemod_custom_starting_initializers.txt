@@ -20,7 +20,6 @@
 # Trinary System I
 
 alicemod_sigma_system_initializer = {
-	name = "Sigma"
 	class = "sc_black_hole_alicemod_xl"
 	flags = { abandoned_gateway }
 	
@@ -37,7 +36,6 @@ alicemod_sigma_system_initializer = {
 	usage = custom_empire
 
 	planet = {
-		name = "Sigma"
 		class = "pc_black_hole"
 		orbit_distance = 0
 		orbit_angle = 1
@@ -199,7 +197,6 @@ alicemod_sigma_system_initializer = {
 	}
 	
 	planet = {
-		name = "Fallen Craddle"
 		count = 1
 		orbit_distance = 1
 		class = pc_nuked
@@ -208,7 +205,6 @@ alicemod_sigma_system_initializer = {
 
 		init_effect = {
 			prevent_anomaly = yes
-			generate_primitives_on_planet = yes
 			add_deposit = d_radioactive_wasteland
 			add_deposit = d_ancient_reactor_pits 	
 			add_deposit = d_abandoned_mining_tunnels 
@@ -463,7 +459,6 @@ alicemod_sigma_system_initializer = {
 	
 	
 	planet = {
-		name = "Old Home"
 		count = 1
 		orbit_distance = 30
 		class = pc_nuked
@@ -882,95 +877,9 @@ alicemod_sigma_system_initializer = {
 		}
 	}
 	
-	planet = {
-		name = "Deep Well"
-		size = { min = 2 max = 6 }
-		class = pc_neutron_star
-		orbit_distance = 2
-		orbit_angle = { min = 100 max = 140 }
-		change_orbit = @base_moon_distance
-		
-		init_effect = {
-			save_event_target_as = alicemod_home_outer3
-		}
-		
-
-		moon = {
-			class = pc_barren
-			size = { min = 15 max = 22 }
-			orbit_angle = { min = 90 max = 270 }
-			orbit_distance = 10
-			
-			init_effect = {
-				create_ambient_object = {
-					type = "abandoned_starbase_01_object"
-					location = this
-				}
-				last_created_ambient_object = {
-					set_location = {
-						target = prev
-						distance = 10
-						angle = 90
-					}
-				}
-			}
-		}
-		
-		planet = {
-			name = "Deep Well Prima"
-			orbit_distance = 0
-			class = "pc_gaia"
-			orbit_angle = { min = 90 max = 270 }
-			size = 25
-			init_effect = {
-				prevent_anomaly = yes
-				generate_primitives_on_planet = yes
-				clear_blockers = yes
-				add_deposit = d_searing_desert
-				add_deposit = d_bountiful_plains
-				add_deposit = d_veiny_cliffs
-				add_deposit = d_mineral_fields
-				add_deposit = d_prosperous_mesa
-				add_deposit = d_ore_rich_caverns
-				add_deposit = d_rugged_woods
-				add_deposit = d_rugged_woods
-				add_deposit = d_rugged_woods
-				add_deposit = d_rugged_woods
-				add_deposit = d_rugged_woods
-				add_deposit = d_rugged_woods
-				add_deposit = d_tempestous_mountain
-			}
-			change_orbit = @base_moon_distance
-		}
-
-
-		moon = {
-			class = pc_asteroid
-			size = { min = 1 max = 8 }
-			count = { min = 4 max = 6 }
-			orbit_angle = { min = 90 max = 270 }
-			orbit_distance = { min = 0 max = 7 }
-			
-			init_effect = {
-				create_ambient_object = {
-					type = "abandoned_starbase_01_object"
-					location = this
-				}
-				last_created_ambient_object = {
-					set_location = {
-						target = prev
-						distance = 10
-						angle = 90
-					}
-				}
-			}
-		}
-	}
-	
 	
 	init_effect = {
 		spawn_megastructure = { type = "strategic_coordination_center_ruined" coords_from = event_target:alicemod_home_outer }
-#		spawn_megastructure = { type = "gateway_ruined" coords_from = event_target:alicemod_home_outer3 }
 		spawn_megastructure = { type = "matter_decompressor_ruined" coords_from = event_target:alicemod_home_twoseven }
 		spawn_megastructure = { type = "think_tank_ruined" coords_from = event_target:alicemod_home_gassy }
 		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_tomb }
