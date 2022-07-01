@@ -1,5 +1,88 @@
+alicemod_building_illegal_posthumous_employment_center = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	icon = "building_clone_vats"
+
+	category = pop_assembly
+
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			NOT = { exists = assembling_species }
+			assembling_species = { is_organic_species = yes }
+		}
+		OR = {
+			owner = { is_ai = no }
+			NAND = {
+				free_district_slots = 0
+				free_building_slots <= 1
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+		owner = {
+			is_regular_empire = yes
+			has_valid_civic = civic_permanent_employment
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = { has_valid_civic = civic_permanent_employment }
+			}
+			AND = {
+				owner = { is_ai = yes }
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_reassigner_add = 3
+		planet_crime_add = 3
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_reassigner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			OR = {
+				has_building = building_robot_assembly_plant
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_robotic_species = yes }
+				}
+			}
+		}
+		text = tooltip_organic_and_artificial_assembly_warning
+	}
+}
+
+
 alicemod_building_illegal_clone_vats = {
 	base_buildtime = @b1_time
+	icon = "building_clone_vats"
 
 	category = pop_assembly
 
@@ -39,7 +122,7 @@ alicemod_building_illegal_clone_vats = {
 
 	planet_modifier = {
 		planet_pop_assembly_organic_add = 3
-		job_reassigner_add = 3
+		planet_crime_add = 3
 	}
 
 	resources = {
@@ -162,5 +245,231 @@ building_alicemod_urban_shell = {
 			owner = { is_gestalt = no }
 		}
 		text = job_clerk_effect_desc
+	}
+}
+
+building_alicemod_paluush_homes = {
+	base_cap_amount = 4
+	base_buildtime = 2800
+	can_demolish = no
+	can_be_ruined = no
+	icon = building_residence
+
+	ai_weight = { weight = 0 }
+	potential = { always = no }
+	
+	planet_modifier = {
+		planet_amenities_add = 10
+		planet_housing_add = 5
+		planet_crime_add = -5
+		job_researcher_add = 2
+		job_farmer_add = 2
+		job_technician_add = 1
+		job_miner_add = 1
+		job_telepath_add = 1
+		job_artisan_add = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 3000
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	on_build = {
+	 	change_planet_size = 2
+	}
+}
+
+building_alicemod_slave = {
+	base_cap_amount = 4
+	base_buildtime = 800
+
+	category = resource
+	
+	potential = {
+		owner = { is_regular_empire = yes }
+		owner = { has_policy_flag = slavery_allowed }
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 3
+		job_farmer_add = 5
+		job_miner_add = 5
+		job_slave_overseer_add = 1
+		planet_amenities_add = -5
+		planet_max_buildings_add = 1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_clerk_add = 5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 5
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 100
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_clerk_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_farmer_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_miner_effect_desc
+	}
+}
+
+building_alicemod_slave_2 = {
+	base_cap_amount = 8
+	base_buildtime = 3600
+	icon = "building_alicemod_slave"
+
+	category = resource
+	
+	potential = {
+		owner = { is_regular_empire = yes }
+		owner = { has_policy_flag = slavery_allowed }
+		has_modifier = slave_colony
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 15
+		job_farmer_add = 15
+		job_miner_add = 15
+		job_slave_overseer_add = 2
+		planet_amenities_add = -15
+		planet_max_buildings_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_clerk_add = 15
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_maintenance_drone_add = 15
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_clerk_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_farmer_effect_desc
+	}
+	
+	triggered_desc = {
+		text = job_miner_effect_desc
+	}
+}
+
+building_alicemod_clinic = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+	icon = building_clinic
+
+	category = amenity
+
+	potential = {
+		owner = { is_regular_empire = yes }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = { is_regular_empire = no }
+			AND = {
+				buildings_stop_pop = yes
+				owner = { is_ai = yes }
+			}
+		}
+	}
+
+	planet_modifier = {
+		job_healthcare_add = 5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_healthcare_effect_desc
 	}
 }
