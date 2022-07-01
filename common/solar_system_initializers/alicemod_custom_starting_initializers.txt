@@ -360,7 +360,7 @@ alicemod_sigma_system_initializer = {
 			
 			init_effect = {
 				create_ambient_object = {
-					type = "npf_01_broken_npc_warship_01_hull_entity"
+					type = "dreadnought_object"
 					location = this
 				}
 				last_created_ambient_object = {
