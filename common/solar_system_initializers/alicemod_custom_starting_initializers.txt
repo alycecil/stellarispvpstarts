@@ -198,6 +198,20 @@ alicemod_sigma_system_initializer = {
 		
 		init_effect = {
 			save_event_target_as = alicemod_home_nuked_inner
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "broken_holy_world_outpost"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 10
+						angle = 90
+					}
+				}
+			}
 		}
 
 		moon = {
@@ -323,6 +337,18 @@ alicemod_sigma_system_initializer = {
 					angle = 270
 				}
 			}
+			
+			create_ambient_object = {
+				type = "ancient_battlefield_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 8
+					angle = 222
+				}
+			}
 		}
 
 		moon = {
@@ -331,6 +357,20 @@ alicemod_sigma_system_initializer = {
 			orbit_distance = 20
 			orbit_angle = { min = 90 max = 270 }
 			has_ring = no
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "npf_01_broken_npc_warship_01_hull_entity"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 10
+						angle = 90
+					}
+				}
+			}
 		}
 		
 		moon = {
