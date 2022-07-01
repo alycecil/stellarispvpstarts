@@ -11,8 +11,8 @@ setup_scenario = {
 	marauder_empire_max = 2
 	advanced_empire_default = 0
 	colonizable_planet_odds = 1.0
-	primitive_odds = 2.0
-	crisis_strength = 0.5
+	primitive_odds = 2.5
+	crisis_strength = 0.25
 	extra_crisis_strength = { 10 25 }
 	
 	cluster_count = {
@@ -51,7 +51,7 @@ setup_scenario = {
 	nebula_min_dist = 10
 	
 	num_wormhole_pairs = { min = 0 max = 10 }
-	num_wormhole_pairs_default = 1
+	num_wormhole_pairs_default = 4
 	num_gateways = { min = 0 max = 30 }
 	num_gateways_default = 15
 	num_hyperlanes = { min=0.5 max= 3 }
