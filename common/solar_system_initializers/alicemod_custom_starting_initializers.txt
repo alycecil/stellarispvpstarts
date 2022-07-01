@@ -91,9 +91,9 @@ alicemod_sigma_system_initializer = {
 		size = 29
 		has_ring = yes
 		change_orbit = 5
+		
 		starting_planet = yes
-		tile_blockers = none
-		modifiers = none
+		
 		init_effect = {
 			prevent_anomaly = yes
 		}
@@ -199,6 +199,7 @@ alicemod_sigma_system_initializer = {
 	}
 	
 	planet = {
+		name = "Fallen Craddle"
 		count = 1
 		orbit_distance = 1
 		class = pc_nuked
@@ -382,7 +383,7 @@ alicemod_sigma_system_initializer = {
 		moon = {
 			class = "pc_frozen"
 			size = 6
-			orbit_distance = 20
+			orbit_distance = 8
 			orbit_angle = { min = 90 max = 270 }
 			has_ring = no
 			
@@ -440,14 +441,14 @@ alicemod_sigma_system_initializer = {
 	}
 	planet = {
 		count = 2
-		class = pc_crystal_asteroid
+		class = pc_rare_crystal_asteroid
 		orbit_distance = { min = 0 max = 1 }
 		orbit_angle = { min = 10 max = 36 }
-		size = { min = @asteroid_min_size max = @asteroid_max_size }
+		size = { min = 1 max = @asteroid_min_size }
 		
 		init_effect = {
 			create_ambient_object = {
-				type = "ancient_battlefield_object"
+				type = "large_debris_object"
 				location = this
 			}
 			last_created_ambient_object = {
@@ -462,8 +463,9 @@ alicemod_sigma_system_initializer = {
 	
 	
 	planet = {
+		name = "Old Home"
 		count = 1
-		orbit_distance = 15
+		orbit_distance = 30
 		class = pc_nuked
 		orbit_angle = { min = 30 max = 90 }
 		change_orbit = @base_moon_distance
@@ -489,14 +491,14 @@ alicemod_sigma_system_initializer = {
 		
 		planet = {
 			count = 2
-			class = pc_crystal_asteroid
+			class = pc_rare_crystal_asteroid
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
-			size = { min = @asteroid_min_size max = @asteroid_max_size }
+			size = { min = 1 max = @asteroid_min_size }
 			
 			init_effect = {
 				create_ambient_object = {
-					type = "ancient_battlefield_object"
+					type = "large_debris_object"
 					location = this
 				}
 				last_created_ambient_object = {
@@ -514,7 +516,7 @@ alicemod_sigma_system_initializer = {
 	planet = {
 		name = "Low Well"
 		class = "pc_g_star"
-		orbit_distance = 70
+		orbit_distance = 55
 		orbit_angle = { min = 180 max = 270 }
 		size = 38
 		change_orbit = 8
@@ -560,7 +562,7 @@ alicemod_sigma_system_initializer = {
 		
 		moon = {
 			class = "pc_gaia"
-			orbit_distance = 1
+			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = 90
 			size = 20
 			init_effect = {
@@ -580,7 +582,7 @@ alicemod_sigma_system_initializer = {
 		
 		moon = {
 			class = "pc_shattered"
-			orbit_distance = 1
+			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = 181
 			size = 20
 			init_effect = {
@@ -620,7 +622,7 @@ alicemod_sigma_system_initializer = {
 		
 		moon = {
 			class = "pc_ocean"
-			orbit_distance = 1
+			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = 272
 			size = 20
 			init_effect = {
@@ -665,10 +667,10 @@ alicemod_sigma_system_initializer = {
 			
 			planet = {
 				count = 2
-				class = pc_crystal_asteroid
+				class = pc_rare_crystal_asteroid
 				orbit_distance = { min = 0 max = 1 }
 				orbit_angle = { min = 10 max = 36 }
-				size = { min = @asteroid_min_size max = @asteroid_max_size }
+				size = { min = 1 max = @asteroid_min_size }
 				
 				init_effect = {
 					create_ambient_object = {
@@ -678,8 +680,8 @@ alicemod_sigma_system_initializer = {
 					last_created_ambient_object = {
 						set_location = {
 							target = prev
-							distance = 0
-							angle = 0
+							distance = 1
+							angle = 2
 						}
 					}
 				}
@@ -697,14 +699,14 @@ alicemod_sigma_system_initializer = {
 		has_ring = yes
 		change_orbit = 5
 		
-		asteroid_belt = {
-			type = rocky_asteroid_belt
-			radius = 15
-		}
-		asteroid_belt = {
-			type = icy_asteroid_belt
-			radius = 55
-		}
+#		asteroid_belt = {
+#			type = rocky_asteroid_belt
+#			radius = 15
+#		}
+#		asteroid_belt = {
+#			type = icy_asteroid_belt
+#			radius = 55
+#		}
 		
 		init_effect = {
 			save_event_target_as = alicemod_home_outer2
@@ -725,17 +727,33 @@ alicemod_sigma_system_initializer = {
 			orbit_angle = { min = 10 max = 55 }
 			size = { min = @moon_min_size max = @moon_max_size }
 			
-			add_modifier = {
-				modifier = "asteroid_impacts"
-				days = -1
+			init_effect = {
+				add_modifier = {
+					modifier = "asteroid_impacts"
+					days = -1
+				}
 			}
 		}
 		planet = {
 			count = 2
-			class = pc_crystal_asteroid
+			class = pc_rare_crystal_asteroid
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
-			size = { min = @asteroid_min_size max = @asteroid_max_size }
+			size = { min = 1 max = @asteroid_min_size }
+			
+			init_effect = {
+					create_ambient_object = {
+						type = "small_debris_object"
+						location = this
+					}
+					last_created_ambient_object = {
+						set_location = {
+							target = prev
+							distance = 2
+							angle = 22
+						}
+					}
+				}
 		}
 		
 		
@@ -762,10 +780,11 @@ alicemod_sigma_system_initializer = {
 			orbit_distance = 5
 			size = { min = @moon_min_size max = @moon_max_size }
 			
-			
-			add_modifier = {
-				modifier = "asteroid_impacts"
-				days = -1
+			init_effect = {
+				add_modifier = {
+					modifier = "asteroid_impacts"
+					days = -1
+				}
 			}
 		}
 		
@@ -813,10 +832,24 @@ alicemod_sigma_system_initializer = {
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "dead_swarm_small_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 4
+						angle = 90
+					}
+				}
+			}
 		}
 		planet = {
 			count = 2
-			class = pc_crystal_asteroid
+			class = pc_rare_crystal_asteroid
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
@@ -833,16 +866,34 @@ alicemod_sigma_system_initializer = {
 						angle = 10
 					}
 				}
+				create_ambient_object = {
+					type = "dead_swarm_small_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 1
+						angle = 12
+					}
+				}
+				
 			}
 		}
 	}
 	
 	planet = {
-		size = { min = 4 max = 10 }
-		class = pc_black_hole
-		orbit_distance = 50
+		name = "Deep Well"
+		size = { min = 2 max = 6 }
+		class = pc_neutron_star
+		orbit_distance = 2
 		orbit_angle = { min = 100 max = 140 }
 		change_orbit = @base_moon_distance
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_outer3
+		}
+		
 
 		moon = {
 			class = pc_barren
@@ -866,6 +917,7 @@ alicemod_sigma_system_initializer = {
 		}
 		
 		planet = {
+			name = "Deep Well Prima"
 			orbit_distance = 0
 			class = "pc_gaia"
 			orbit_angle = { min = 90 max = 270 }
@@ -880,6 +932,11 @@ alicemod_sigma_system_initializer = {
 				add_deposit = d_mineral_fields
 				add_deposit = d_prosperous_mesa
 				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rugged_woods
+				add_deposit = d_rugged_woods
+				add_deposit = d_rugged_woods
+				add_deposit = d_rugged_woods
+				add_deposit = d_rugged_woods
 				add_deposit = d_rugged_woods
 				add_deposit = d_tempestous_mountain
 			}
@@ -913,15 +970,14 @@ alicemod_sigma_system_initializer = {
 	
 	init_effect = {
 		spawn_megastructure = { type = "strategic_coordination_center_ruined" coords_from = event_target:alicemod_home_outer }
-		spawn_megastructure = { type = "dyson_sphere_5" coords_from = event_target:alicemod_home_outer2 }
+		spawn_megastructure = { type = "gateway_ruined" coords_from = event_target:alicemod_home_outer3 }
 		spawn_megastructure = { type = "matter_decompressor_ruined" coords_from = event_target:alicemod_home_twoseven }
 		spawn_megastructure = { type = "think_tank_ruined" coords_from = event_target:alicemod_home_gassy }
 		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_tomb }
 		spawn_megastructure = { type = "spy_orb_ruined" coords_from = event_target:alicemod_home_nuked }
 		spawn_megastructure = { type = "hyper_relay_ruined" coords_from = event_target:alicemod_home_molten }
 		spawn_megastructure = { type = "mega_art_installation_ruined" coords_from = event_target:alicemod_home_relic }
-		spawn_megastructure = { type = "interstellar_assembly_ruined" coords_from = event_target:alicemod_home_desert }
-		spawn_megastructure = { type = "gateway_ruined" random_pos = yes orbit_angle = 360 }
+		spawn_megastructure = { type = "interstellar_assembly_ruined" coords_from = event_target:alicemod_home_outer2 }
 	}
 
 	neighbor_system = {
