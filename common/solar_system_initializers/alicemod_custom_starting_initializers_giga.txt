@@ -19,6 +19,54 @@
 @frozen_world_max_size = 20
 # Trinary System I
 
+### Habitable Squareworld Segment
+#	planet = {
+#		class = pc_squareworld_habitable
+#		orbit_distance = 13
+#		orbit_angle = 90
+#		size = 4
+#		has_ring = no
+#		modifiers = none
+#
+#		starting_planet = yes
+#		flags = { ignore_startup_effect giga_squareworld }
+#
+#		init_effect = {
+#			set_planet_flag = forbid_guillis_planet_modifiers
+#			prevent_anomaly = yes
+#		}
+#	}
+#
+#	init_effect = {
+#		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 0		orbit_distance = 58 planet = star }
+#		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 180	orbit_distance = 58 planet = star }
+#		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 270	orbit_distance = 58 planet = star }
+#		spawn_megastructure = { type = "r_square_world_hub" planet = star }
+#		giga_field_system_debris = yes
+#	}
+
+
+#############################
+#
+# Custom Starting Systems #
+#
+#############################
+
+@distance = 50
+@jumps = 3
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 10
+@moon_min_size = 6
+@moon_max_size = 10
+@homeworld_min_size = 18
+@homeworld_max_size = 21
+@asteroid_min_size = 2
+@asteroid_max_size = 4
+@frozen_world_min_size = 9
+@frozen_world_max_size = 20
+# Trinary System I
+
 alicemod_sigma_system_initializer = {
 	name = "Sigma"
 	class = "sc_black_hole_alicemod_xl"
@@ -82,6 +130,32 @@ alicemod_sigma_system_initializer = {
 			orbit_angle = 270
 			orbit_distance = 45
 		}
+	}
+	
+	planet = {
+		class = pc_squareworld_habitable
+		orbit_distance = 13
+		orbit_angle = 90
+		size = 4
+		has_ring = no
+		modifiers = none
+
+
+		flags = { ignore_startup_effect giga_squareworld }
+
+		init_effect = {
+			set_planet_flag = forbid_guillis_planet_modifiers
+			prevent_anomaly = yes
+			generate_primitives_on_planet = yes
+		}
+	}
+
+	init_effect = {
+		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 0		orbit_distance = 58 planet = star }
+		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 180	orbit_distance = 58 planet = star }
+		spawn_megastructure = { type = "r_square_world_ruined" orbit_angle = 270	orbit_distance = 58 planet = star }
+		spawn_megastructure = { type = "r_square_world_hub" planet = star }
+		giga_field_system_debris = yes
 	}
 
 	planet = {
@@ -198,6 +272,15 @@ alicemod_sigma_system_initializer = {
 		
 		init_effect = {
 			save_event_target_as = alicemod_home_nuked_inner
+			
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
 		}
 
 		moon = {
@@ -651,20 +734,6 @@ alicemod_sigma_system_initializer = {
 			size = { min = 15 max = 22 }
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 10
-			
-			init_effect = {
-				create_ambient_object = {
-					type = "abandoned_starbase_01_object"
-					location = this
-				}
-				last_created_ambient_object = {
-					set_location = {
-						target = prev
-						distance = 10
-						angle = 90
-					}
-				}
-			}
 		}
 		
 		planet = {
@@ -695,20 +764,52 @@ alicemod_sigma_system_initializer = {
 			count = { min = 4 max = 6 }
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = { min = 0 max = 7 }
-			
+		}
+	}
+	
+	planet = {
+		size = { min = 0 max = 40 }
+		class = pc_gigabrown_dwarf
+		orbit_distance = 20
+		orbit_angle = { min = 100 max = 140 }
+		change_orbit = @base_moon_distance
+		init_effect = { add_modifier = { modifier = "giga_brown_dwarf" days = -1 } }
+
+		moon = {
+			class = pc_barren
+			size = { min = 15 max = 22 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 10
+		}
+		
+		planet = {
+			orbit_distance = 0
+			class = "pc_flat_world"
+			orbit_angle = { min = 90 max = 270 }
+			size = 25
 			init_effect = {
-				create_ambient_object = {
-					type = "abandoned_starbase_01_object"
-					location = this
-				}
-				last_created_ambient_object = {
-					set_location = {
-						target = prev
-						distance = 10
-						angle = 90
-					}
-				}
+				prevent_anomaly = yes
+				generate_primitives_on_planet = yes
+				clear_blockers = yes
+				add_deposit = d_searing_desert
+				add_deposit = d_bountiful_plains
+				add_deposit = d_veiny_cliffs
+				add_deposit = d_mineral_fields
+				add_deposit = d_prosperous_mesa
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_rugged_woods
+				add_deposit = d_tempestous_mountain
 			}
+			change_orbit = @base_moon_distance
+		}
+
+
+		moon = {
+			class = rl_browndwarf_moon
+			size = { min = 15 max = 22 }
+			count = { min = 4 max = 6 }
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = { min = 5 max = 7 }
 		}
 	}
 	
