@@ -124,6 +124,7 @@ alicemod_sigma_system_initializer = {
 				add_deposit = d_massive_crevice   
 			}
 		}
+		
 		moon = {
 			name = "Old Home City Moon"
 			class = "pc_relic"
@@ -143,7 +144,21 @@ alicemod_sigma_system_initializer = {
 				add_deposit = d_flooded_reactor_pits  	
 				add_deposit = d_crumbling_mining_tunnels  
 				add_deposit = d_collapsed_spire  
-				add_deposit = d_massive_crevice   
+				add_deposit = d_massive_crevice  				
+			}
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "small_debris_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = { min = 4 max = 7 }
+						angle = { min = 10 max = 36 }
+					}
+				}
 			}
 		}
 		
@@ -156,7 +171,22 @@ alicemod_sigma_system_initializer = {
 			init_effect = {
 				save_event_target_as = alicemod_home_ninty
 			}
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "small_debris_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = { min = 0 max = 5 }
+						angle = { min = 10 max = 36 }
+					}
+				}
+			}
 		}
+		
 		moon = {
 			class = "pc_gas_giant"
 			orbit_distance = 0
@@ -167,6 +197,7 @@ alicemod_sigma_system_initializer = {
 				save_event_target_as = alicemod_home_gas
 			}
 		}
+		
 		moon = {
 			class = "pc_black_hole"
 			orbit_distance = 0
@@ -199,17 +230,26 @@ alicemod_sigma_system_initializer = {
 		init_effect = {
 			save_event_target_as = alicemod_home_nuked_inner
 			
-			init_effect = {
-				create_ambient_object = {
-					type = "broken_holy_world_outpost"
-					location = this
+			create_ambient_object = {
+				type = "broken_holy_world_outpost"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+					angle = 90
 				}
-				last_created_ambient_object = {
-					set_location = {
-						target = prev
-						distance = 10
-						angle = 90
-					}
+			}
+			create_ambient_object = {
+				type = "ancient_battlefield_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = { min = 0 max = 10 }
+					angle = { min = 10 max = 36 }
 				}
 			}
 		}
@@ -370,6 +410,17 @@ alicemod_sigma_system_initializer = {
 						angle = 90
 					}
 				}
+				create_ambient_object = {
+					type = "ancient_battlefield_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = { min = 5 max = 11 }
+						angle = { min = 10 max = 36 }
+					}
+				}
 			}
 		}
 		
@@ -393,12 +444,34 @@ alicemod_sigma_system_initializer = {
 	
 	change_orbit = 15
 	planet = {
-		count = 10
+		count = 8
 		class = pc_ice_asteroid
 		orbit_distance = { min = 0 max = 1 }
 		orbit_angle = { min = 10 max = 36 }
 		size = { min = @asteroid_min_size max = @asteroid_max_size }
 	}
+	planet = {
+		count = 2
+		class = pc_crystal_asteroid
+		orbit_distance = { min = 0 max = 1 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "ancient_battlefield_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = { min = 0 max = 1 }
+					angle = { min = 0 max = 45 }
+				}
+			}
+		}
+	}
+	
 	
 	planet = {
 		count = 1
@@ -425,6 +498,29 @@ alicemod_sigma_system_initializer = {
 			orbit_angle = { min = 90 max = 270 }
 			orbit_distance = 6
 		}
+		
+		planet = {
+			count = 2
+			class = pc_crystal_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 36 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "ancient_battlefield_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = { min = 0 max = 1 }
+						angle = { min = 10 max = 36 }
+					}
+				}
+			}
+		}
+		
 	}
 	
 	planet = {
@@ -459,6 +555,18 @@ alicemod_sigma_system_initializer = {
 				add_deposit = d_crumbling_mining_tunnels  
 				add_deposit = d_collapsed_spire  
 				add_deposit = d_massive_crevice   
+				
+				create_ambient_object = {
+					type = "ancient_battlefield_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 8
+						angle = 45
+					}
+				}
 			}
 		}
 		
@@ -506,7 +614,20 @@ alicemod_sigma_system_initializer = {
 					modifier = "asteroid_impacts"
 					days = -1
 				}
+				
+				create_ambient_object = {
+					type = "ancient_battlefield_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = 8
+						angle = 222
+					}
+				}
 			}
+
 		}
 		
 		moon = {
@@ -553,6 +674,28 @@ alicemod_sigma_system_initializer = {
 					days = -1
 				}
 			}
+			
+			planet = {
+				count = 2
+				class = pc_crystal_asteroid
+				orbit_distance = { min = 0 max = 1 }
+				orbit_angle = { min = 10 max = 36 }
+				size = { min = @asteroid_min_size max = @asteroid_max_size }
+				
+				init_effect = {
+					create_ambient_object = {
+						type = "small_debris_object"
+						location = this
+					}
+					last_created_ambient_object = {
+						set_location = {
+							target = prev
+							distance = { min = 0 max = 4 }
+							angle = { min = 0 max = 36 }
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -592,6 +735,18 @@ alicemod_sigma_system_initializer = {
 			class = random_non_colonizable
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 55 }
+			size = { min = @moon_min_size max = @moon_max_size }
+			
+			add_modifier = {
+				modifier = "asteroid_impacts"
+				days = -1
+			}
+		}
+		planet = {
+			count = 2
+			class = pc_crystal_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 36 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 		}
 		
@@ -617,6 +772,7 @@ alicemod_sigma_system_initializer = {
 			class = random_non_colonizable
 			orbit_angle = { min = 10 max = 290 }
 			orbit_distance = 5
+			size = { min = @moon_min_size max = @moon_max_size }
 			
 			
 			add_modifier = {
@@ -672,10 +828,24 @@ alicemod_sigma_system_initializer = {
 		}
 		planet = {
 			count = 2
-			class = pc_ice_asteroid
+			class = pc_crystal_asteroid
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
+			
+			init_effect = {
+				create_ambient_object = {
+					type = "small_debris_object"
+					location = this
+				}
+				last_created_ambient_object = {
+					set_location = {
+						target = prev
+						distance = { min = 0 max = 7 }
+						angle = { min = 10 max = 36 }
+					}
+				}
+			}
 		}
 	}
 	
