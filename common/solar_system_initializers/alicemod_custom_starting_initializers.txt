@@ -1,0 +1,472 @@
+#############################
+#
+# Custom Starting Systems #
+#
+#############################
+
+@distance = 50
+@jumps = 3
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 10
+@moon_min_size = 6
+@moon_max_size = 10
+@homeworld_min_size = 18
+@homeworld_max_size = 21
+@asteroid_min_size = 2
+@asteroid_max_size = 4
+@frozen_world_min_size = 9
+@frozen_world_max_size = 20
+# Trinary System I
+
+alicemod_sigma_system_initializer = {
+	name = "Sigma"
+	class = "sc_black_hole_alicemod_xl"
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 135
+	}
+	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 150
+	}
+	
+	usage = custom_empire
+
+	planet = {
+		name = "Sigma"
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 10
+		has_ring = no
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_blackhole_sigma
+		}
+	}
+	
+	change_orbit = 45
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+	
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 0
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 90
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 180
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 270
+			orbit_distance = 45
+		}
+	}
+
+	planet = {
+		class = "pc_gaia"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 29
+		has_ring = yes
+		change_orbit = 5
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_planet
+		}
+		
+		moon = {
+			name = "Home City Moon"
+			class = "pc_city"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+			init_effect = {
+				save_event_target_as = alicemod_home_newcity
+			}
+		}
+		moon = {
+			name = "Old Home City Moon"
+			class = "pc_relic"
+			orbit_distance = 4
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+			
+			init_effect = {
+				save_event_target_as = alicemod_home_oldcity
+			}
+		}
+		
+		moon = {
+			class = "pc_asteroid"
+			orbit_distance = 6
+			orbit_angle = { min = 0 max = 90 }
+			size = 3
+			
+			init_effect = {
+				save_event_target_as = alicemod_home_ninty
+			}
+		}
+		moon = {
+			class = "pc_gas_giant"
+			orbit_distance = 0
+			orbit_angle = { min = 150 max = 180 }
+			size = 14
+			
+			init_effect = {
+				save_event_target_as = alicemod_home_gas
+			}
+		}
+		moon = {
+			class = "pc_black_hole"
+			orbit_distance = 0
+			orbit_angle = { min = 190 max = 270 }
+			size = 2
+			
+			init_effect = {
+				save_event_target_as = alicemod_home_twoseven
+			}
+		}
+	}
+	
+	planet = {
+		name = "Inner Well Gas Giant"
+		class = "pc_gas_giant"
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_gassy
+		}
+		
+		init_effect = {
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+					angle = 270
+				}
+			}
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+					angle = 0
+				}
+			}
+			create_ambient_object = {
+				type = "abandoned_starbase_01_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 10
+					angle = 90
+				}
+			}
+			create_ambient_object = {
+				type = "large_debris_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 15
+					angle = 180
+				}
+			}
+			create_ambient_object = {
+				type = "large_debris_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 15
+					angle = 0
+				}
+			}
+			create_ambient_object = {
+				type = "large_debris_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 15
+					angle = 270
+				}
+			}
+		}
+
+		moon = {
+			class = "pc_frozen"
+			size = 6
+			orbit_distance = 20
+			orbit_angle = { min = 90 max = 270 }
+			has_ring = no
+		}
+		
+		moon = {
+			count = { min = 1 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	change_orbit = 30
+	planet = {
+		count = 7
+		class = pc_asteroid
+		orbit_distance = { min = 0 max = 1 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+	}
+	
+	change_orbit = 15
+	planet = {
+		count = 10
+		class = pc_ice_asteroid
+		orbit_distance = { min = 0 max = 1 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = @asteroid_min_size max = @asteroid_max_size }
+	}
+	
+	planet = {
+		count = 1
+		orbit_distance = 15
+		class = pc_nuked
+		orbit_angle = { min = 30 max = 90 }
+		change_orbit = @base_moon_distance
+
+		init_effect = {
+			add_deposit = d_radioactive_wasteland	
+		}
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_nuked
+		}
+
+		moon = {
+			count = 1
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+	
+	planet = {
+		name = "Low Well"
+		class = "pc_g_star"
+		orbit_distance = 70
+		orbit_angle = { min = 90 max = 270 }
+		size = 38
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_outer
+		}
+		
+		change_orbit = 45
+		
+		moon = {
+			class = "pc_relic"
+			orbit_distance = 15
+			orbit_angle = 0
+			size = 20
+			
+			init_effect = {
+				save_event_target_as = alicemod_home_relic
+			}
+		}
+		
+		moon = {
+			class = "pc_gaia"
+			orbit_distance = 1
+			orbit_angle = 90
+			size = 20
+			init_effect = {
+				save_event_target_as = alicemod_home_farmworld
+			}
+		}
+		
+		moon = {
+			class = "pc_shattered"
+			orbit_distance = 1
+			orbit_angle = 181
+			size = 20
+			init_effect = {
+				save_event_target_as = alicemod_home_tomb
+			}
+		}
+		
+		moon = {
+			class = "pc_ocean"
+			orbit_distance = 1
+			orbit_angle = 272
+			size = 20
+			init_effect = {
+				save_event_target_as = alicemod_home_water
+			}
+		}
+	}
+	
+	planet = {
+		name = "Shallow Well"
+		class = "pc_g_star"
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		size = 12
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		
+		asteroid_belt = {
+			type = rocky_asteroid_belt
+			radius = 15
+		}
+		asteroid_belt = {
+			type = icy_asteroid_belt
+			radius = 55
+		}
+		
+		init_effect = {
+			save_event_target_as = alicemod_home_outer2
+		}
+		
+		change_orbit = 15
+		planet = {
+			count = 3
+			class = pc_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 36 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+		}
+		
+		moon = {
+			class = "pc_molten"
+			orbit_distance = 4
+			orbit_angle = 90
+			size = 11
+			init_effect = {
+				save_event_target_as = alicemod_home_molten
+			}
+		}
+	
+		moon = {
+			class = "pc_desert"
+			orbit_distance = 7
+			orbit_angle = 90
+			size = 10
+			init_effect = {
+				save_event_target_as = alicemod_home_desert
+			}
+		}
+		
+		moon = {
+			count = 3
+			class = random_non_colonizable
+			orbit_angle = { min = 10 max = 290 }
+			orbit_distance = 5
+		}
+		
+		change_orbit = 15
+		planet = {
+			count = 7
+			class = pc_ice_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 36 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+		}
+	}
+	
+	
+	init_effect = {
+		spawn_megastructure = { type = "strategic_coordination_center_ruined" coords_from = event_target:alicemod_home_outer }
+		spawn_megastructure = { type = "dyson_sphere_ruined" coords_from = event_target:alicemod_home_outer2 }
+		spawn_megastructure = { type = "matter_decompressor_ruined" coords_from = event_target:alicemod_home_twoseven }
+		spawn_megastructure = { type = "think_tank_ruined" coords_from = event_target:alicemod_home_gassy }
+		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_tomb }
+		spawn_megastructure = { type = "spy_orb_ruined" coords_from = event_target:alicemod_home_nuked }
+	}
+
+	neighbor_system = {
+		distance = { min = 1 max = @jumps }
+		initializer = "ring_world_init_01"
+	}
+	neighbor_system = {
+		distance = { min = 1 max = @jumps }
+		initializer = "dyson_sphere_init_01"
+	}
+	neighbor_system = {
+		distance = { min = 1 max = @jumps }
+		initializer = "sentry_array_init_01"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1_first_colony"
+	}
+}
