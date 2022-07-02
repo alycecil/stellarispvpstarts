@@ -20,7 +20,7 @@
 # Trinary System I
 
 alicemod_sigma_system_initializer = {
-	class = "sc_black_hole_alicemod_xl"
+	class = "sc_black_hole_alicemod_xl_start"
 	flags = { abandoned_gateway }
 	
 	asteroid_belt = {
