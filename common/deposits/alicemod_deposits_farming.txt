@@ -1,0 +1,30 @@
+d_alicemod_farm_infra = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = no
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_farming_max = 5
+		planet_farmers_food_produces_add = 2
+	}
+
+	potential = {
+        can_have_habitable_deposits = yes
+    }
+
+	drop_weight = {
+        weight = @low_rare
+        modifier = {
+            factor = @planet_type_bonus
+            is_cold = yes
+        }
+        modifier = {
+            factor = 2
+            is_planet_class = pc_gaia
+        }
+    }
+}

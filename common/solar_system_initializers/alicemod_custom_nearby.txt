@@ -14,7 +14,7 @@
 @homeworld_min_size = 18
 @homeworld_max_size = 21
 @asteroid_min_size = 2
-@asteroid_max_size = 4
+@asteroid_max_size = 3
 @frozen_world_min_size = 9
 @frozen_world_max_size = 20
 # Trinary System I
@@ -168,7 +168,7 @@ alicemod_side_sr1 = {
 			count = 5
 			class = pc_ice_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 55 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
@@ -190,7 +190,7 @@ alicemod_side_sr1 = {
 			count = 2
 			class = pc_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 55 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
@@ -224,22 +224,24 @@ alicemod_side_sr1 = {
 			count = 2
 			class = pc_ice_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 55 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 
-			random_list = {
-                1 = { add_deposit = d_food_10 }
-                10 = { add_deposit = d_food_3 }
-                10 = { add_deposit = d_alloys_1 }
-                3 = { add_deposit = d_alloys_2 }
-                1 = { add_deposit = d_physics_4 }
-                2 = { add_deposit = d_physics_3 }
-                3 = { add_deposit = d_physics_2 }
-                4 = { add_deposit = d_physics_1 }
-                1 = { add_deposit = d_society_4 }
-                2 = { add_deposit = d_society_3 }
-                3 = { add_deposit = d_society_2 }
-                4 = { add_deposit = d_society_1 }
+            init_effect = {
+                random_list = {
+                    1 = { add_deposit = d_food_10 }
+                    10 = { add_deposit = d_food_3 }
+                    10 = { add_deposit = d_alloys_1 }
+                    3 = { add_deposit = d_alloys_2 }
+                    1 = { add_deposit = d_physics_4 }
+                    2 = { add_deposit = d_physics_3 }
+                    3 = { add_deposit = d_physics_2 }
+                    4 = { add_deposit = d_physics_1 }
+                    1 = { add_deposit = d_society_4 }
+                    2 = { add_deposit = d_society_3 }
+                    3 = { add_deposit = d_society_2 }
+                    4 = { add_deposit = d_society_1 }
+                }
             }
 		}
 
@@ -253,29 +255,31 @@ alicemod_side_sr1 = {
 
 	change_orbit = 58
 	planet = {
-        count = 2
+        count = 3
         class = pc_ice_asteroid
         orbit_distance = { min = 0 max = 1 }
         orbit_angle = { min = 10 max = 36 }
         size = { min = @asteroid_min_size max = @asteroid_max_size }
 
-        random_list = {
-            1 = { add_deposit = d_food_10 }
-            10 = { add_deposit = d_food_3 }
-            10 = { add_deposit = d_alloys_1 }
-            3 = { add_deposit = d_alloys_2 }
-            1 = { add_deposit = d_physics_4 }
-            2 = { add_deposit = d_physics_3 }
-            3 = { add_deposit = d_physics_2 }
-            4 = { add_deposit = d_physics_1 }
-            1 = { add_deposit = d_society_4 }
-            2 = { add_deposit = d_society_3 }
-            3 = { add_deposit = d_society_2 }
-            4 = { add_deposit = d_society_1 }
+        init_effect = {
+            random_list = {
+                1 = { add_deposit = d_food_10 }
+                10 = { add_deposit = d_food_3 }
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                3 = { add_deposit = d_physics_2 }
+                4 = { add_deposit = d_physics_1 }
+                1 = { add_deposit = d_society_4 }
+                2 = { add_deposit = d_society_3 }
+                3 = { add_deposit = d_society_2 }
+                4 = { add_deposit = d_society_1 }
+            }
         }
     }
 	planet = {
-		count = 1
+		count = 3
 		class = pc_rare_crystal_asteroid
 		orbit_distance = { min = 0 max = 1 }
 		orbit_angle = { min = 10 max = 36 }
@@ -329,29 +333,31 @@ alicemod_side_sr1 = {
         orbit_angle = { min = 10 max = 36 }
         size = { min = @asteroid_min_size max = @asteroid_max_size }
 
-        random_list = {
-            10 = { add_deposit = d_alloys_1 }
-            3 = { add_deposit = d_alloys_2 }
-            1 = { add_deposit = d_engineering_4 }
-            2 = { add_deposit = d_engineering_3 }
-            3 = { add_deposit = d_engineering_2 }
-            4 = { add_deposit = d_engineering_1 }
-            1 = { add_deposit = d_physics_4 }
-            2 = { add_deposit = d_physics_3 }
-            3 = { add_deposit = d_physics_2 }
-            4 = { add_deposit = d_physics_1 }
-            1 = { add_deposit = d_society_4 }
-            2 = { add_deposit = d_society_3 }
-            3 = { add_deposit = d_society_2 }
-            4 = { add_deposit = d_society_1 }
-            1 = { add_deposit = d_energy_4 }
-            2 = { add_deposit = d_energy_3 }
-            3 = { add_deposit = d_energy_2 }
-            4 = { add_deposit = d_energy_1 }
-            1 = { add_deposit = d_minerals_4 }
-            2 = { add_deposit = d_minerals_3 }
-            3 = { add_deposit = d_minerals_2 }
-            4 = { add_deposit = d_minerals_1 }
+        init_effect = {
+            random_list = {
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_engineering_4 }
+                2 = { add_deposit = d_engineering_3 }
+                3 = { add_deposit = d_engineering_2 }
+                4 = { add_deposit = d_engineering_1 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                3 = { add_deposit = d_physics_2 }
+                4 = { add_deposit = d_physics_1 }
+                1 = { add_deposit = d_society_4 }
+                2 = { add_deposit = d_society_3 }
+                3 = { add_deposit = d_society_2 }
+                4 = { add_deposit = d_society_1 }
+                1 = { add_deposit = d_energy_4 }
+                2 = { add_deposit = d_energy_3 }
+                3 = { add_deposit = d_energy_2 }
+                4 = { add_deposit = d_energy_1 }
+                1 = { add_deposit = d_minerals_4 }
+                2 = { add_deposit = d_minerals_3 }
+                3 = { add_deposit = d_minerals_2 }
+                4 = { add_deposit = d_minerals_1 }
+            }
         }
     }
 
@@ -365,7 +371,7 @@ alicemod_side_sr1 = {
 
 
 alicemod_side_sr1_neighbor = {
-	class = pc_f_star
+    class = "sc_g"
 	name = "Sigma Beta"
 
 	asteroid_belt = {
@@ -376,7 +382,7 @@ alicemod_side_sr1_neighbor = {
     planet = {
 	    name = "Sigma Beta"
 		count = 1
-		class = pc_f_star
+		class = pc_g_star
 		orbit_distance = 0
 		orbit_angle = 0
 		size = { min = 20 max = 25 }
@@ -427,6 +433,16 @@ alicemod_side_sr1_neighbor = {
             size = { min = @moon_min_size max = @moon_max_size }
             orbit_distance = { min = 3 max = 5 }
         }
+
+        init_effect = {
+            add_deposit = d_alicemod_farm_infra
+            add_deposit = d_marvelous_oasis
+            add_deposit = d_teeming_reef
+            add_deposit = d_black_soil
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+        }
 	}
 
 	change_orbit = 45
@@ -438,29 +454,31 @@ alicemod_side_sr1_neighbor = {
         orbit_angle = { min = 10 max = 36 }
         size = { min = @asteroid_min_size max = @asteroid_max_size }
 
-        random_list = {
-            10 = { add_deposit = d_alloys_1 }
-            3 = { add_deposit = d_alloys_2 }
-            1 = { add_deposit = d_engineering_4 }
-            2 = { add_deposit = d_engineering_3 }
-            3 = { add_deposit = d_engineering_2 }
-            4 = { add_deposit = d_engineering_1 }
-            1 = { add_deposit = d_physics_4 }
-            2 = { add_deposit = d_physics_3 }
-            3 = { add_deposit = d_physics_2 }
-            4 = { add_deposit = d_physics_1 }
-            1 = { add_deposit = d_society_4 }
-            2 = { add_deposit = d_society_3 }
-            3 = { add_deposit = d_society_2 }
-            4 = { add_deposit = d_society_1 }
-            1 = { add_deposit = d_energy_4 }
-            2 = { add_deposit = d_energy_3 }
-            3 = { add_deposit = d_energy_2 }
-            4 = { add_deposit = d_energy_1 }
-            1 = { add_deposit = d_minerals_4 }
-            2 = { add_deposit = d_minerals_3 }
-            3 = { add_deposit = d_minerals_2 }
-            4 = { add_deposit = d_minerals_1 }
+        init_effect = {
+            random_list = {
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_engineering_4 }
+                2 = { add_deposit = d_engineering_3 }
+                3 = { add_deposit = d_engineering_2 }
+                4 = { add_deposit = d_engineering_1 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                3 = { add_deposit = d_physics_2 }
+                4 = { add_deposit = d_physics_1 }
+                1 = { add_deposit = d_society_4 }
+                2 = { add_deposit = d_society_3 }
+                3 = { add_deposit = d_society_2 }
+                4 = { add_deposit = d_society_1 }
+                1 = { add_deposit = d_energy_4 }
+                2 = { add_deposit = d_energy_3 }
+                3 = { add_deposit = d_energy_2 }
+                4 = { add_deposit = d_energy_1 }
+                1 = { add_deposit = d_minerals_4 }
+                2 = { add_deposit = d_minerals_3 }
+                3 = { add_deposit = d_minerals_2 }
+                4 = { add_deposit = d_minerals_1 }
+            }
         }
     }
 
