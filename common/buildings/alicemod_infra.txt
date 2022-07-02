@@ -283,7 +283,7 @@ building_alicemod_paluush_homes = {
 		}
 	}
 	
-	on_build = {
+	on_built = {
 	 	change_planet_size = 2
 	}
 }
