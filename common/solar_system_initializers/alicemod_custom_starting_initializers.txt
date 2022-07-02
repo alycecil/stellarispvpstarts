@@ -20,6 +20,7 @@
 # Trinary System I
 
 alicemod_sigma_system_initializer = {
+    name = "Sigma Prima"
 	class = "sc_black_hole_alicemod_xl_start"
 	flags = { empire_home_system abandoned_gateway }
 	
@@ -36,6 +37,7 @@ alicemod_sigma_system_initializer = {
 	usage = custom_empire
 
 	planet = {
+	    name = "Sigma Prima"
 		class = "pc_black_hole"
 		orbit_distance = 0
 		orbit_angle = 1
@@ -891,6 +893,14 @@ alicemod_sigma_system_initializer = {
 	}
 
 	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 1 }
+		initializer = "alicemod_side_sr1"
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 1 }
+		initializer = "alicemod_side_sr2"
+	}
+	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 2 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t1"
@@ -899,13 +909,5 @@ alicemod_sigma_system_initializer = {
 		trigger = { num_guaranteed_colonies >= 1 }
 		hyperlane_jumps = { min = 1 max = @jumps }
 		initializer = "neighbor_t1_first_colony"
-	}
-	neighbor_system = {
-		hyperlane_jumps = { min = 1 max = 1 }
-		initializer = "alicemod_side_sr1"
-	}
-	neighbor_system = {
-		hyperlane_jumps = { min = 1 max = 1 }
-		initializer = "alicemod_side_sr2"
 	}
 }
