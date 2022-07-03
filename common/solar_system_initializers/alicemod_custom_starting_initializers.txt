@@ -99,11 +99,6 @@ alicemod_sigma_system_initializer = {
 		}
 		
 		init_effect = {
-            add_deposit = d_alicemod_farm_infra
-			generate_start_buildings_and_blockers = yes
-		}
-		
-		init_effect = {
 			save_event_target_as = alicemod_home_planet
 		}
 		
@@ -787,6 +782,7 @@ alicemod_sigma_system_initializer = {
 			orbit_distance = 7
 			orbit_angle = 90
 			size = 10
+			flags = { ruined_orbital_ring_planet }
 			init_effect = {
 				save_event_target_as = alicemod_home_desert
 			}
@@ -886,6 +882,36 @@ alicemod_sigma_system_initializer = {
 		spawn_megastructure = { type = "hyper_relay_ruined" coords_from = event_target:alicemod_home_molten }
 		spawn_megastructure = { type = "mega_art_installation_ruined" coords_from = event_target:alicemod_home_relic }
 		spawn_megastructure = { type = "interstellar_assembly_ruined" coords_from = event_target:alicemod_home_outer2 }
+
+		spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_home_desert
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
 		
 		spawn_megastructure = {
 			type = "gateway_ruined"
