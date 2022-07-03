@@ -9,6 +9,7 @@
 @planet_type_bonus = 1.5
 
 d_alicemod_farm_infra = {
+    icon = d_fertile_lands
 	is_for_colonizable = yes
 	use_for_min_max_adjustments = no
 
