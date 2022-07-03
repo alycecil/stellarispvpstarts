@@ -33,7 +33,7 @@ alicemod_side_sr1 = {
 	}
 	asteroid_belt = {
 		type = icy_asteroid_belt
-		radius = 220
+		radius = 265
 	}
 
 	planet = {
@@ -418,7 +418,7 @@ alicemod_side_sr1_neighbor = {
 
 	planet = {
 	    class = pc_gaia
-		orbit_distance = 15
+		orbit_distance = 0
 		orbit_angle = { min = 90 max = 270 }
         flags = { ruined_orbital_ring_planet }
 
@@ -481,7 +481,7 @@ alicemod_side_sr1_neighbor = {
 
     planet = {
         class = pc_gaia
-        orbit_distance = 15
+        orbit_distance = 45
         orbit_angle = { min = 90 max = 270 }
         flags = { ruined_orbital_ring_planet }
 
@@ -544,7 +544,7 @@ alicemod_side_sr1_neighbor = {
 
     planet = {
         class = pc_gaia
-        orbit_distance = 15
+        orbit_distance = 45
         orbit_angle = { min = 90 max = 270 }
         flags = { ruined_orbital_ring_planet }
 

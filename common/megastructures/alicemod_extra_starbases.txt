@@ -233,7 +233,6 @@ alicemod_bruteforce_orbital_starport = {
                 module = "missile_battery"
 
                 building = "target_uplink_computer"
-		        building = "listening_post"
 			}
 		}
 		remove_megastructure = fromfrom
