@@ -1,0 +1,40 @@
+﻿l_english:
+
+ # ###################################
+ # megas
+ # ###################################
+ alicemod_bruteforce_orbital_ring:0 "Early Orbital Ring"
+ alicemod_bruteforce_orbital_ring_desc:0 "An early brute force attempt at building an orbital ring."
+
+ alicemod_stellar_defense_platfrom_x5:0 "Found small Denfense Platform Fleet"
+ alicemod_stellar_defense_platfrom_x25_desc:0 "Create 5 defense platformss orbiting this orbital object."
+
+ alicemod_stellar_defense_platfrom_x25:0 "Found large Defense Platform Fleet"
+ alicemod_stellar_defense_platfrom_x25_desc:0 "Create 25 defense platformss orbiting this orbital object."
+
+ alicemod_bruteforce_orbital_outpost:0 "Build Outpost"
+ alicemod_bruteforce_orbital_outpost_desc:0 "Build an additional Outpost in this system."
+
+ alicemod_bruteforce_orbital_starport:0 "Build Starport"
+ alicemod_bruteforce_orbital_starport_desc:0 "Build an additional Starport in this system."
+
+ alicemod_bruteforce_orbital_starhold:0 "Build Starhold"
+ alicemod_bruteforce_orbital_starhold_desc:0 "Build an additional Starhold in this system."
+
+ alicemod_bruteforce_orbital_starfortress:0 "Build Star Fortress"
+ alicemod_bruteforce_orbital_starfortress_desc:0 "Build an additional Star Fortress in this system."
+
+ alicemod_bruteforce_orbital_citadel:0 "Build Citadel"
+ alicemod_bruteforce_orbital_citadel_desc:0 "Build an additional Citadel in this system."
+
+
+ ################################
+ ### Districts
+ #######
+
+ d_alicemod_farm_infra:0 "Extensive Farming Infrastructure"
+ d_alicemod_farm_infra_desc:0 "Nanobot-Enriched fertile fields."
+
+ ##########
+ #
+ #######
