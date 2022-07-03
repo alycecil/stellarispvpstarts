@@ -10,7 +10,7 @@ alicemod_bruteforce_orbital_outpost = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = 0 y = 0 }
-	scales_with_planet = yesd
+	scales_with_planet = yes
 	build_time = 400
 
 	resources = {
@@ -111,11 +111,6 @@ alicemod_bruteforce_orbital_outpost = {
 			create_starbase = {
 				owner = FROM
 				size = "starbase_outpost"
-
-                module = "missile_battery"
-                module = "missile_battery"
-
-                building = "defense_grid"
 			}
 		}
 		remove_megastructure = fromfrom
@@ -132,7 +127,7 @@ alicemod_bruteforce_orbital_starport = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = 0 y = 0 }
-	scales_with_planet = yesd
+	scales_with_planet = yes
 	build_time = 1000
 
 	resources = {
@@ -234,7 +229,6 @@ alicemod_bruteforce_orbital_starport = {
 				owner = FROM
 				size = "starbase_starport"
 
-                module = "hangar_bay"
                 module = "missile_battery"
                 module = "missile_battery"
 
@@ -268,7 +262,7 @@ alicemod_bruteforce_orbital_starhold = {
 	}
 	construction_blocks_and_blocked_by = none
 
-	potential = { has_technology = tech_starbase_2 }
+	potential = { has_technology = tech_starbase_3 }
 
 	possible = {
 		exists = starbase
@@ -359,13 +353,12 @@ alicemod_bruteforce_orbital_starhold = {
 				size = "starbase_starhold"
 
                 module = "hangar_bay"
-                module = "hangar_bay"
+                module = "missile_battery"
                 module = "missile_battery"
                 module = "missile_battery"
 
                 building = "target_uplink_computer"
                 building = "defense_grid"
-		        building = "listening_post"
 			}
 		}
 		remove_megastructure = fromfrom
@@ -382,7 +375,7 @@ alicemod_bruteforce_orbital_starfortress = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = 0 y = 0 }
-	scales_with_planet = yesd
+	scales_with_planet = yes
 	build_time = 2000
 
 	resources = {
@@ -508,7 +501,7 @@ alicemod_bruteforce_orbital_citadel = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = yes
 	entity_offset = { x = 0 y = 0 }
-	scales_with_planet = yesd
+	scales_with_planet = yes
 	build_time = 2450
 
 	resources = {

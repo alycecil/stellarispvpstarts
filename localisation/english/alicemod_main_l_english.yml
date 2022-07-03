@@ -7,8 +7,8 @@
  alicemod_bruteforce_orbital_ring_desc:0 "An early brute force attempt at building an orbital ring."
  alicemod_bruteforce_orbital_ring_MEGASTRUCTURE_DETAILS:0 "$alicemod_bruteforce_orbital_ring_desc$"
 
- alicemod_stellar_defense_platfrom_x5:0 "Found small Denfense Platform Fleet"
- alicemod_stellar_defense_platfrom_x5_desc:0 "Create 5 defense platformss orbiting this orbital object."
+ alicemod_stellar_defense_platfrom_x5:0 "Found small Defense Platform Fleet"
+ alicemod_stellar_defense_platfrom_x5_desc:0 "Create 5 defense platforms orbiting this orbital object."
  alicemod_stellar_defense_platfrom_x5_MEGASTRUCTURE_DETAILS:0 "$alicemod_stellar_defense_platfrom_x5_desc$"
 
  alicemod_stellar_defense_platfrom_x25:0 "Found large Defense Platform Fleet"
@@ -35,6 +35,17 @@
  alicemod_bruteforce_orbital_citadel_desc:0 "Build an additional Citadel in this system."
  alicemod_bruteforce_orbital_citadel_MEGASTRUCTURE_DETAILS:0 "$alicemod_bruteforce_orbital_citadel_desc$"
 
+ alicemod_giga_artificial_asteroid:0 "Build Artificial Asteroid Artillery"
+ alicemod_giga_artificial_asteroid_desc:0 "Builds an artificial Asteroid Artillery that cannot bear the stresses of upgrades"
+ alicemod_giga_artificial_asteroid_MEGASTRUCTURE_DETAILS:0 "$alicemod_giga_artificial_asteroid_desc$"
+
+ alicemod_stellar_defense_large:0 "Build Stellar Fortress platform"
+ alicemod_stellar_defense_large_desc:0 "Build a Fortress class platforms."
+ alicemod_stellar_defense_large_MEGASTRUCTURE_DETAILS:0 "$alicemod_stellar_defense_large_desc$"
+
+ alicemod_stellar_defense_large_x10:0 "Build large Stellar Fortress fleet"
+ alicemod_stellar_defense_large_x10_desc:0 "Build ten Fortress class platforms."
+ alicemod_stellar_defense_large_x10_MEGASTRUCTURE_DETAILS:0 "$alicemod_stellar_defense_large_x10_desc$"
 
  ################################
  ### Districts
