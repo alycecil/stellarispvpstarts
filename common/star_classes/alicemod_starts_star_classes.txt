@@ -21,5 +21,6 @@ sc_black_hole_alicemod_xl_start = {
 	modifier = {
 		ship_disengage_chance_reduction = 0.5
 		ship_emergency_ftl_min_days_mult = 0.5
+		ship_speed_reduction = 0.25 # Be careful about using this modifier outside of star classes, it can throw off the ETA for ships
 	}
 }
