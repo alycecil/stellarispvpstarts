@@ -426,7 +426,7 @@ alicemod_side_sr1_neighbor = {
 
 	asteroid_belt = {
         type = rocky_asteroid_belt
-        radius = 180
+        radius = 196
     }
 
     planet = {
