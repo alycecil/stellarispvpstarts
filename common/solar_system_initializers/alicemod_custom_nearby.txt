@@ -253,7 +253,7 @@ alicemod_side_sr1 = {
 
 
 
-	change_orbit = 58
+	change_orbit = 88
 	planet = {
         count = 3
         class = pc_ice_asteroid
@@ -359,6 +359,56 @@ alicemod_side_sr1 = {
                 4 = { add_deposit = d_minerals_1 }
             }
         }
+    }
+
+    change_orbit = 66
+
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
     }
 
 
@@ -690,6 +740,55 @@ alicemod_side_sr1_neighbor = {
 
     }
 
+    change_orbit = 66
+
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
+    }
 }
 
 alicemod_side_sr2 = {
