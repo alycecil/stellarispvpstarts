@@ -1,6 +1,6 @@
 sc_black_hole_alicemod_xl_start = {
 	class			= black_hole
-	icon_scale		= 2.0
+	icon_scale		= 2.5
 	planet			= { key = pc_black_hole }
 	spawn_odds		= 0.8
 	num_planets	= { min = 3 max = 8 }

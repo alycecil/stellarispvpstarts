@@ -19,6 +19,8 @@
 @frozen_world_max_size = 20
 # Trinary System I
 
+######################################################################## alicemod_side_sr1 ###################
+
 alicemod_side_sr1 = {
     name = "Sigma Alpha"
 	class = "sc_black_hole_alicemod_xl_start"
@@ -417,8 +419,9 @@ alicemod_side_sr1 = {
 		initializer = "alicemod_side_sr1_neighbor"
 	}
 }
+#//endregion
 
-
+######################################################################## alicemod_side_sr1_neighbor ###################
 
 alicemod_side_sr1_neighbor = {
     class = "sc_g"
@@ -791,6 +794,8 @@ alicemod_side_sr1_neighbor = {
     }
 }
 
+######################################################################## alicemod_side_sr2 ###################
+
 alicemod_side_sr2 = {
 	class = "sc_black_hole_alicemod_xl_start"
 	name = "Sigma Secundus"
@@ -1098,6 +1103,1071 @@ alicemod_side_sr2 = {
                     }
                 }
             }
+        }
+    }
+}
+
+######################################################################## alicemod_side_sr1_common ###################
+
+alicemod_side_sr1_common = {
+	class = "sc_black_hole_alicemod_xl_start"
+
+	asteroid_belt = {
+        type = icy_asteroid_belt
+        radius = 20
+    }
+    asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 80
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 265
+	}
+
+	planet = {
+		class = "pc_black_hole"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 10
+		has_ring = no
+
+		init_effect = {
+			save_event_target_as = alicemod_side_sr1_blackhole_sigma
+		}
+	}
+
+	change_orbit = 20
+
+	planet = {
+        class = pc_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = 1
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+    }
+
+
+	change_orbit = 25
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 0
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 90
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 180
+			orbit_distance = 45
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 270
+			orbit_distance = 45
+		}
+	}
+
+    change_orbit = 35
+
+    planet = {
+        count = 10
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+        init_effect = {
+            random_list = {
+                15 = {
+                    add_deposit = d_volatile_motes_1
+                }
+                15 = {
+                    add_deposit = d_exotic_gases_1
+                }
+                15 = {
+                    add_deposit = d_exotic_gases_2
+                }
+                15 = {
+                    add_deposit = d_volatile_motes_2
+                }
+                20 = {
+                    add_deposit = d_rare_crystals_3
+                }
+                10 = {
+                    add_deposit = d_rare_crystals_2
+                }
+                10 = {
+                    add_deposit = d_rare_crystals_1
+                }
+                1 = { add_deposit = d_living_metal_deposit  }
+                1 = { add_deposit = d_zro_deposit_1 }
+            }
+        }
+    }
+
+	change_orbit = 80
+
+
+	planet = {
+		count = 1
+		orbit_distance = 1
+		class = pc_nuked
+		orbit_angle = { min = 170 max = 190 }
+		change_orbit = @base_moon_distance
+
+		init_effect = {
+			prevent_anomaly = yes
+			add_deposit = d_radioactive_wasteland
+			add_deposit = d_ancient_reactor_pits
+			add_deposit = d_abandoned_mining_tunnels
+			add_deposit = d_central_spire
+			add_deposit = d_industrial_sector
+		}
+
+		init_effect = {
+			create_ambient_object = {
+				type = "ancient_battlefield_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = 10
+				}
+			}
+		}
+
+		moon = {
+			count = 1
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 6
+		}
+
+		change_orbit = 7
+		planet = {
+			count = 5
+			class = pc_ice_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 55 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+            init_effect = {
+                random_list = {
+                    1 = { add_deposit = d_food_10 }
+                    10 = { add_deposit = d_food_3 }
+                    1 = { add_deposit = d_physics_4 }
+                    2 = { add_deposit = d_physics_3 }
+                    3 = { add_deposit = d_physics_2 }
+                    4 = { add_deposit = d_physics_1 }
+                    1 = { add_deposit = d_society_4 }
+                    2 = { add_deposit = d_society_3 }
+                    3 = { add_deposit = d_society_2 }
+                    4 = { add_deposit = d_society_1 }
+                }
+            }
+		}
+		planet = {
+			count = 2
+			class = pc_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 55 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+            init_effect = {
+                random_list = {
+                    10 = { add_deposit = d_alloys_1 }
+                    3 = { add_deposit = d_alloys_2 }
+                    1 = { add_deposit = d_engineering_4 }
+                    1 = { add_deposit = d_physics_4 }
+                    1 = { add_deposit = d_society_4 }
+                    1 = { add_deposit = d_energy_4 }
+                    2 = { add_deposit = d_energy_3 }
+                    1 = { add_deposit = d_minerals_4 }
+                    2 = { add_deposit = d_minerals_3 }
+                    3 = { add_deposit = d_minerals_2 }
+                    4 = { add_deposit = d_minerals_1 }
+                }
+            }
+		}
+		planet = {
+			count = 2
+			class = pc_ice_asteroid
+			orbit_distance = { min = 0 max = 1 }
+			orbit_angle = { min = 10 max = 55 }
+			size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+            init_effect = {
+                random_list = {
+                    1 = { add_deposit = d_food_10 }
+                    10 = { add_deposit = d_food_3 }
+                    10 = { add_deposit = d_alloys_1 }
+                    3 = { add_deposit = d_alloys_2 }
+                    1 = { add_deposit = d_physics_4 }
+                    2 = { add_deposit = d_physics_3 }
+                    3 = { add_deposit = d_physics_2 }
+                    4 = { add_deposit = d_physics_1 }
+                    1 = { add_deposit = d_society_4 }
+                    2 = { add_deposit = d_society_3 }
+                    3 = { add_deposit = d_society_2 }
+                    4 = { add_deposit = d_society_1 }
+                }
+            }
+		}
+
+		change_orbit = 7
+		planet = {
+		    class = pc_f_star
+        }
+	}
+
+
+
+	change_orbit = 88
+	planet = {
+        count = 3
+        class = pc_ice_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+        init_effect = {
+            random_list = {
+                1 = { add_deposit = d_food_10 }
+                10 = { add_deposit = d_food_3 }
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                3 = { add_deposit = d_physics_2 }
+                4 = { add_deposit = d_physics_1 }
+                1 = { add_deposit = d_society_4 }
+                2 = { add_deposit = d_society_3 }
+                3 = { add_deposit = d_society_2 }
+                4 = { add_deposit = d_society_1 }
+            }
+        }
+    }
+	planet = {
+		count = 3
+		class = pc_rare_crystal_asteroid
+		orbit_distance = { min = 0 max = 1 }
+		orbit_angle = { min = 10 max = 36 }
+		size = { min = 1 max = @asteroid_min_size }
+
+		init_effect = {
+			create_ambient_object = {
+				type = "large_debris_object"
+				location = this
+			}
+			last_created_ambient_object = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = 0
+				}
+			}
+			random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+		}
+
+	}
+
+    planet = {
+        count = 3
+        class = pc_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+        init_effect = {
+            random_list = {
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_engineering_4 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                1 = { add_deposit = d_energy_4 }
+                2 = { add_deposit = d_energy_3 }
+                3 = { add_deposit = d_energy_2 }
+                4 = { add_deposit = d_energy_1 }
+                1 = { add_deposit = d_minerals_4 }
+                2 = { add_deposit = d_minerals_3 }
+                3 = { add_deposit = d_minerals_2 }
+                4 = { add_deposit = d_minerals_1 }
+            }
+        }
+    }
+
+    change_orbit = 66
+
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
+    }
+
+
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = 3 }
+		initializer = "alicemod_side_sr1_neighbor_common"
+	}
+}
+
+######################################################################## alicemod_side_sr1_neighbor_common ###################
+
+alicemod_side_sr1_neighbor_common = {
+    class = "sc_g"
+
+	asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 196
+    }
+
+    planet = {
+		count = 1
+		class = pc_g_star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = { min = 20 max = 25 }
+		has_ring = no
+	}
+
+	change_orbit = 45
+
+	init_effect = {
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 0
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 90
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 180
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 270
+            orbit_distance = 45
+        }
+    }
+
+    change_orbit = 45
+
+	planet = {
+	    class = pc_gaia
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+        flags = { ruined_orbital_ring_planet }
+
+		init_effect = {
+		    save_event_target_as = alicemod_gaia_ruined_orbital_ring_planet
+		}
+
+		change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 5 }
+            orbit_angle = { min = 90 max = 270 }
+            class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+            orbit_distance = { min = 3 max = 5 }
+        }
+
+        init_effect = {
+            add_deposit = d_alicemod_farm_infra
+            add_deposit = d_marvelous_oasis
+            add_deposit = d_teeming_reef
+            add_deposit = d_black_soil
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+        }
+	}
+
+	init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_gaia_ruined_orbital_ring_planet
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    planet = {
+        class = pc_gaia
+        orbit_distance = 45
+        orbit_angle = { min = 90 max = 270 }
+        flags = { ruined_orbital_ring_planet }
+
+        init_effect = {
+            save_event_target_as = alicemod_gaia_ruined_orbital_ring_planet2
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 5 }
+            orbit_angle = { min = 90 max = 270 }
+            class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+            orbit_distance = { min = 3 max = 5 }
+        }
+
+        init_effect = {
+            add_deposit = d_alicemod_farm_infra
+            add_deposit = d_marvelous_oasis
+            add_deposit = d_teeming_reef
+            add_deposit = d_black_soil
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+        }
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_gaia_ruined_orbital_ring_planet2
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    planet = {
+        class = pc_gaia
+        orbit_distance = 45
+        orbit_angle = { min = 90 max = 270 }
+        flags = { ruined_orbital_ring_planet }
+
+        init_effect = {
+            save_event_target_as = alicemod_gaia_ruined_orbital_ring_planet3
+        }
+
+        change_orbit = @base_moon_distance
+
+        moon = {
+            count = { min = 0 max = 5 }
+            orbit_angle = { min = 90 max = 270 }
+            class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+            orbit_distance = { min = 3 max = 5 }
+        }
+
+        init_effect = {
+            add_deposit = d_alicemod_farm_infra
+            add_deposit = d_marvelous_oasis
+            add_deposit = d_teeming_reef
+            add_deposit = d_black_soil
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+            add_deposit = d_fertile_lands
+        }
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_gaia_ruined_orbital_ring_planet3
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+	change_orbit = 45
+
+    planet = {
+        count = { min = 3 max = 10 }
+        class = pc_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+        init_effect = {
+            random_list = {
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_engineering_4 }
+                2 = { add_deposit = d_engineering_3 }
+                1 = { add_deposit = d_physics_4 }
+                2 = { add_deposit = d_physics_3 }
+                1 = { add_deposit = d_society_4 }
+                1 = { add_deposit = d_energy_4 }
+                2 = { add_deposit = d_energy_3 }
+                3 = { add_deposit = d_energy_2 }
+                4 = { add_deposit = d_energy_1 }
+                1 = { add_deposit = d_minerals_4 }
+                2 = { add_deposit = d_minerals_3 }
+                3 = { add_deposit = d_minerals_2 }
+                4 = { add_deposit = d_minerals_1 }
+            }
+        }
+    }
+
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
+    }
+
+    change_orbit = 66
+
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
+    }
+
+    change_orbit = 100
+    planet = {
+        count = 1
+        class = pc_g_star
+        orbit_distance = 0
+        orbit_angle = 0
+        size = { min = 20 max = 25 }
+        has_ring = no
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "hyper_relay_ruined"
+            random_pos = yes
+            orbit_angle = 360		# range of the randomization
+        }
+    }
+}
+
+######################################################################## alicemod_side_sr2_common ###################
+
+alicemod_side_sr2_common = {
+	class = "sc_black_hole_alicemod_xl_start"
+
+	asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 80
+    }
+
+    planet = {
+        class = "pc_black_hole"
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 10
+        has_ring = no
+
+        init_effect = {
+            save_event_target_as = alicemod_alicemod_side_sr2_blackhole_sigma
+        }
+    }
+
+	change_orbit = 45
+
+	init_effect = {
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 0
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 90
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 180
+            orbit_distance = 45
+        }
+        spawn_megastructure = {
+            type = "ring_world_ruined"
+            orbit_angle = 270
+            orbit_distance = 45
+        }
+    }
+
+    change_orbit = 35
+
+    planet = {
+        count = { min = 3 max = 10 }
+        class = pc_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+        init_effect = {
+            random_list = {
+                10 = { add_deposit = d_alloys_1 }
+                3 = { add_deposit = d_alloys_2 }
+                1 = { add_deposit = d_energy_4 }
+                2 = { add_deposit = d_energy_3 }
+                3 = { add_deposit = d_energy_2 }
+                4 = { add_deposit = d_energy_1 }
+                1 = { add_deposit = d_minerals_4 }
+                2 = { add_deposit = d_minerals_3 }
+                3 = { add_deposit = d_minerals_2 }
+                4 = { add_deposit = d_minerals_1 }
+            }
+        }
+    }
+    planet = {
+        count = 1
+        class = pc_rare_crystal_asteroid
+        orbit_distance = { min = 0 max = 1 }
+        orbit_angle = { min = 10 max = 36 }
+        size = { min = 1 max = @asteroid_min_size }
+
+        init_effect = {
+            create_ambient_object = {
+                type = "large_debris_object"
+                location = this
+            }
+            last_created_ambient_object = {
+                set_location = {
+                    target = prev
+                    distance = 0
+                    angle = 0
+                }
+            }
+            random_list = {
+                 15 = {
+                     add_deposit = d_volatile_motes_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_1
+                 }
+                 15 = {
+                     add_deposit = d_exotic_gases_2
+                 }
+                 15 = {
+                     add_deposit = d_volatile_motes_2
+                 }
+                 20 = {
+                     add_deposit = d_rare_crystals_3
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_2
+                 }
+                 10 = {
+                     add_deposit = d_rare_crystals_1
+                 }
+                 1 = { add_deposit = d_living_metal_deposit  }
+                 1 = { add_deposit = d_zro_deposit_1 }
+             }
+        }
+
+    }
+
+
+    change_orbit = 45
+
+	planet = {
+	    class = pc_city
+        flags = { ruined_orbital_ring_planet }
+		orbit_distance = 15
+		orbit_angle = { min = 90 max = 270 }
+
+		change_orbit = @base_moon_distance
+
+		init_effect = {
+		    save_event_target_as = alicemod_ruined_orbital_ring_planet
+		}
+
+		moon = {
+			count = { min = 0 max = 5 }
+			orbit_angle = { min = 90 max = 270 }
+			class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+			orbit_distance = { min = 3 max = 5 }
+		}
+	}
+
+	init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_ruined_orbital_ring_planet
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    planet = {
+        class = pc_city
+        flags = { ruined_orbital_ring_planet }
+        orbit_distance = 15
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        init_effect = {
+            save_event_target_as = alicemod_ruined_orbital_ring_planet2
+        }
+
+        moon = {
+            count = { min = 0 max = 5 }
+            orbit_angle = { min = 90 max = 270 }
+            class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+            orbit_distance = { min = 3 max = 5 }
+        }
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_ruined_orbital_ring_planet2
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    planet = {
+        class = pc_city
+        flags = { ruined_orbital_ring_planet }
+        orbit_distance = 15
+        orbit_angle = { min = 90 max = 270 }
+
+        change_orbit = @base_moon_distance
+
+        init_effect = {
+            save_event_target_as = alicemod_ruined_orbital_ring_planet3
+        }
+
+        moon = {
+            count = { min = 0 max = 5 }
+            orbit_angle = { min = 90 max = 270 }
+            class = random_non_colonizable
+            size = { min = @moon_min_size max = @moon_max_size }
+            orbit_distance = { min = 3 max = 5 }
+        }
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "orbital_ring_ruined"
+            planet = event_target:alicemod_ruined_orbital_ring_planet3
+
+            init_effect = {
+                create_ambient_object = {
+                    type = "medium_debris_01_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 8
+                        angle = 90
+                    }
+                }
+                create_ambient_object = {
+                    type = "medium_debris_02_object"
+                    location = this
+                }
+                last_created_ambient_object = {
+                    set_location = {
+                        target = prev
+                        distance = 3
+                        angle = 270
+                    }
+                }
+            }
+        }
+    }
+
+    change_orbit = 100
+    planet = {
+        count = 1
+        class = pc_g_star
+        orbit_distance = 0
+        orbit_angle = 0
+        size = { min = 20 max = 25 }
+        has_ring = no
+    }
+
+    init_effect = {
+        spawn_megastructure = {
+            type = "hyper_relay_ruined"
+            random_pos = yes
+            orbit_angle = 360		# range of the randomization
+        }
+        spawn_megastructure = {
+            type = "gateway_ruined"
+            random_pos = yes
+            orbit_angle = 360		# range of the randomization
         }
     }
 }
