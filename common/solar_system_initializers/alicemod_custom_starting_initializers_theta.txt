@@ -252,6 +252,10 @@ alicemod_theta_system_initializer = {
 			orbit_distance = { min = 0 max = 1 }
 			orbit_angle = { min = 10 max = 36 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
+
+            init_effect = {
+                save_event_target_as = alicemod_home_asteroid_alt
+            }
 		}
 		planet = {
 			count = 2
@@ -565,38 +569,8 @@ alicemod_theta_system_initializer = {
 		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_roid }
 		spawn_megastructure = { type = "spy_orb_ruined" coords_from = event_target:alicemod_home_nuked }
 		spawn_megastructure = { type = "hyper_relay_ruined" coords_from = event_target:alicemod_home_nuked_inner }
-		spawn_megastructure = { type = "mega_art_installation_ruined" coords_from = event_target:alicemod_home_relic }
+		spawn_megastructure = { type = "mega_art_installation_ruined" coords_from = event_target:alicemod_home_asteroid_alt }
 		spawn_megastructure = { type = "interstellar_assembly_ruined" coords_from = event_target:alicemod_home_outer2 }
-
-		spawn_megastructure = {
-            type = "orbital_ring_ruined"
-            planet = event_target:alicemod_home_desert
-
-            init_effect = {
-                create_ambient_object = {
-                    type = "medium_debris_01_object"
-                    location = this
-                }
-                last_created_ambient_object = {
-                    set_location = {
-                        target = prev
-                        distance = 8
-                        angle = 90
-                    }
-                }
-                create_ambient_object = {
-                    type = "medium_debris_02_object"
-                    location = this
-                }
-                last_created_ambient_object = {
-                    set_location = {
-                        target = prev
-                        distance = 3
-                        angle = 270
-                    }
-                }
-            }
-        }
 		
 		spawn_megastructure = {
 			type = "gateway_ruined"
