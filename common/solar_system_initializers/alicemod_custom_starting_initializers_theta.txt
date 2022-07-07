@@ -519,8 +519,7 @@ alicemod_theta_system_initializer = {
         size = 35
         has_ring = no
 
-        change_orbit = @base_moon_distance
-
+        change_orbit = 35
         planet = {
             count = 1
             class = pc_asteroid
