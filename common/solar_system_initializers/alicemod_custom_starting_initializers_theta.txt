@@ -243,14 +243,14 @@ alicemod_theta_system_initializer = {
 			count = 5
 			class = pc_ice_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 51 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 		}
 		planet = {
 			count = 2
 			class = pc_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 51 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
@@ -261,7 +261,7 @@ alicemod_theta_system_initializer = {
 			count = 2
 			class = pc_ice_asteroid
 			orbit_distance = { min = 0 max = 1 }
-			orbit_angle = { min = 10 max = 36 }
+			orbit_angle = { min = 10 max = 51 }
 			size = { min = @asteroid_min_size max = @asteroid_max_size }
 		}
 	}
@@ -407,7 +407,7 @@ alicemod_theta_system_initializer = {
 		count = 7
 		class = pc_asteroid
 		orbit_distance = { min = 0 max = 1 }
-		orbit_angle = { min = 10 max = 36 }
+		orbit_angle = { min = 10 max = 51 }
 		size = { min = @asteroid_min_size max = @asteroid_max_size }
 	}
 	#End of asteroid @ 135
@@ -418,14 +418,14 @@ alicemod_theta_system_initializer = {
 		count = 8
 		class = pc_ice_asteroid
 		orbit_distance = { min = 0 max = 1 }
-		orbit_angle = { min = 10 max = 36 }
+		orbit_angle = { min = 10 max = 51 }
 		size = { min = @asteroid_min_size max = @asteroid_max_size }
 	}
 	planet = {
 		count = 2
 		class = pc_rare_crystal_asteroid
 		orbit_distance = { min = 0 max = 1 }
-		orbit_angle = { min = 10 max = 36 }
+		orbit_angle = { min = 10 max = 51 }
 		size = { min = 1 max = @asteroid_min_size }
 		
 		init_effect = {
@@ -498,7 +498,7 @@ alicemod_theta_system_initializer = {
             count = 1
             class = pc_asteroid
             orbit_distance = { min = 0 max = 1 }
-            orbit_angle = { min = 10 max = 36 }
+            orbit_angle = { min = 10 max = 51 }
             size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
@@ -525,7 +525,7 @@ alicemod_theta_system_initializer = {
             count = 1
             class = pc_asteroid
             orbit_distance = { min = 0 max = 1 }
-            orbit_angle = { min = 10 max = 36 }
+            orbit_angle = { min = 10 max = 51 }
             size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
@@ -548,14 +548,14 @@ alicemod_theta_system_initializer = {
             count = 3
             class = pc_asteroid
             orbit_distance = { min = 0 max = 1 }
-            orbit_angle = { min = 10 max = 36 }
+            orbit_angle = { min = 10 max = 51 }
             size = { min = @asteroid_min_size max = @asteroid_max_size }
         }
         planet = {
             count = 1
             class = pc_asteroid
             orbit_distance = { min = 0 max = 1 }
-            orbit_angle = { min = 10 max = 36 }
+            orbit_angle = { min = 10 max = 51 }
             size = { min = @asteroid_min_size max = @asteroid_max_size }
 
             init_effect = {
