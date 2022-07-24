@@ -16,4 +16,7 @@
  alicemod_theta_system_initializer_NAME:0 "Remnant Empire (Theta Prime)"
  alicemod_theta_system_initializer_DESC:0 "Remnant Empire featuring Ringworlds and other destroyed infrastructure."
 
+ alicemod_beta_system_initializer_NAME:0 "Remnant Empire (Fallen Theta)"
+ alicemod_beta_system_initializer_DESC:0 "Remnant Empire with primitives featuring Ringworlds and other destroyed infrastructure."
+
  sc_black_hole_alicemod_xl_start:0 "Artificial Black Hole"
