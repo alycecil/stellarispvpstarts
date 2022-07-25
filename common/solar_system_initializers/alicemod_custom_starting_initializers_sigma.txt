@@ -665,7 +665,7 @@ alicemod_sigma_system_initializer = {
 		spawn_megastructure = { type = "strategic_coordination_center_ruined" coords_from = event_target:alicemod_home_outer }
 		spawn_megastructure = { type = "matter_decompressor_ruined" coords_from = event_target:alicemod_home_twoseven }
 		spawn_megastructure = { type = "think_tank_ruined" coords_from = event_target:alicemod_home_gassy }
-		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_tomb }
+		spawn_megastructure = { type = "mega_shipyard_ruined" coords_from = event_target:alicemod_home_desert }
 		spawn_megastructure = { type = "spy_orb_ruined" coords_from = event_target:alicemod_home_nuked }
 		spawn_megastructure = { type = "hyper_relay_ruined" coords_from = event_target:alicemod_home_molten }
 		spawn_megastructure = { type = "mega_art_installation_ruined" coords_from = event_target:alicemod_home_relic }
