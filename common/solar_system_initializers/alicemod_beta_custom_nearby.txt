@@ -21,7 +21,7 @@
 
 ######################################################################## alicemod_side_beta_sr1_common ###################
 
-alicemod_side_beta_sr1_common = {
+alicemod_side_beta_sr1_common_primitives = {
 	class = "sc_black_hole_alicemod_xl_start"
 
 	asteroid_belt = {
@@ -403,7 +403,7 @@ alicemod_side_beta_sr1_common = {
 
 ######################################################################## alicemod_side_sr1_beta_neighbor_common ###################
 
-alicemod_side_sr1_beta_neighbor_common = {
+alicemod_side_sr1_beta_neighbor_common_primitives = {
     class = "sc_g"
 
 	asteroid_belt = {
@@ -786,7 +786,7 @@ alicemod_side_sr1_beta_neighbor_common = {
 
 ######################################################################## alicemod_side_beta_sr2_common ###################
 
-alicemod_side_beta_sr2_common = {
+alicemod_side_beta_sr2_common_primitives = {
 	class = "sc_black_hole_alicemod_xl_start"
 
 	asteroid_belt = {
