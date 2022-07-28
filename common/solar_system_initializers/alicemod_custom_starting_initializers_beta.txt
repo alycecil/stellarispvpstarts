@@ -583,11 +583,11 @@ alicemod_beta_system_initializer = {
 
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = 2 }
-		initializer = "alicemod_side_beta_sr1_common"
+		initializer = "alicemod_side_beta_sr1_common_primitives"
 	}
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = 2 }
-		initializer = "alicemod_side_beta_sr2_common"
+		initializer = "alicemod_side_beta_sr2_common_primitives"
 	}
 	neighbor_system = {
 		trigger = { num_guaranteed_colonies >= 2 }

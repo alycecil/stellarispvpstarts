@@ -397,7 +397,7 @@ alicemod_side_beta_sr1_common_primitives = {
 
 	neighbor_system = {
 		hyperlane_jumps = { min = 1 max = 3 }
-		initializer = "alicemod_side_sr1_beta_neighbor_common"
+		initializer = "alicemod_side_sr1_beta_neighbor_common_primitives"
 	}
 }
 
